@@ -16,10 +16,11 @@ def df_summary(df):
 def missing_report(df):
     return df.isnull().mean().sort_values(ascending= False)
 
-def correlation_matrix(df):
-    plt.figure(figsize=(12, 8))
-    sns.heatmap(df.corr(), annot=True, fmt=".2f", cmap='coolwarm', square=True)
-    plt.title('Correlation Matrix')
+def correlation_heatmap(df):
+    plt.figure(figsize=(10, 6))
+    sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
+    plt.title('Correlation Heatmap')
+    plt.tight_layout()
     plt.show()
 
 def outlier_summary(df):
